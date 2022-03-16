@@ -13,12 +13,19 @@ export default makeStyles((theme) => ({
             alignItems: "center",
             cursor: "pointer"
         },
+        profileLink: {
+            display: 'flex',
+            justifyContent: "flex-end",
+            alignItems: "right",
+            cursor: "pointer",
+            marginLeft: '65%'
+        },
         cinemaLogoIcon: {
             fontSize: '2.25em'
         },
         headerLogo: {
-            marginLeft: '0.15em'
-        },
+            marginLeft: '0.15em',
+     },
         toolbar: {
             display: 'flex',
             justifyContent: "space-between",

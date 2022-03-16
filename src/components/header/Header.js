@@ -26,10 +26,11 @@ const Header = ({onLogout, isAuthenticated}) => {
     const profileSection = () => {
         if(isAuthenticated) {
             return (
-                <div onClick={redirectToProfile} className={classes.profileLink}>
-                     <Typography className ={classes.headerLogo} variant="body1">
-                         Welcome, Admin
+                <div onClick={onProfile} className={classes.profileLink}>
+                     <Typography className ={classes.profileLink} variant="body1">
+                         Welcome,Admin!
                      </Typography>
+
                      <PersonIcon/>
                 </div>
             );
@@ -62,6 +63,8 @@ const Header = ({onLogout, isAuthenticated}) => {
         </AppBar>
     );
 };
+
+
 
 Header.propTypes = {
     onLogout: PropTypes.func.isRequired,
