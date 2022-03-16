@@ -5,8 +5,9 @@ import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import PersonIcon from '@material-ui/icons/Person';
 import styles from "./styles/headerStyles";
 import PropTypes from "prop-types";
+import {BrowserRouter as Router, Redirect, Route, Switch} from "react-router-dom";
 
-const Header = ({onLogout, onProfile, isAuthenticated}) => {
+const Header = ({onLogout, isAuthenticated}) => {
     const classes = styles();
 
     const logoutSection = () => {
@@ -25,7 +26,7 @@ const Header = ({onLogout, onProfile, isAuthenticated}) => {
     const profileSection = () => {
         if(isAuthenticated) {
             return (
-                <div onClick={onProfile} className={classes.logoutLink}>
+                <div onClick={redirectToProfile} className={classes.profileLink}>
                      <Typography className ={classes.headerLogo} variant="body1">
                          Welcome, Admin
                      </Typography>
@@ -35,6 +36,16 @@ const Header = ({onLogout, onProfile, isAuthenticated}) => {
         }
     };
 
+    const redirectToProfile = () => {
+        console.log("clicked")
+        return (
+        <Router>
+            <Switch>
+            <Redirect path="/" exact to="/profile"/>
+            </Switch>
+            </Router>
+        )
+    } 
     return (
         <AppBar position={"sticky"}>
             <Toolbar className={classes.toolbar}>
@@ -45,6 +56,7 @@ const Header = ({onLogout, onProfile, isAuthenticated}) => {
                         SkyFox Cinema
                     </Typography>
                 </a>
+                {profileSection()}
                 {logoutSection()}
             </Toolbar>
         </AppBar>

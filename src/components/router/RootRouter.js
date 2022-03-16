@@ -2,6 +2,7 @@
 import {BrowserRouter as Router, Redirect, Route, Switch} from "react-router-dom";
 import React from "react";
 import Shows from "../shows/Shows";
+import Profile from "../profile/Profile";
 import ErrorOutlineIcon from '@material-ui/icons/ErrorOutline';
 import BlockIcon from '@material-ui/icons/Block';
 import {Error} from "../common";
@@ -17,6 +18,7 @@ const RootRouter = ({isAuthenticated, onLogin}) => {
             <Switch>
                 <Redirect path="/" exact to={`/shows?date=${todayDate}`}/>
                 <ProtectedRoute exact path="/shows" component={Shows} isAuthenticated={isAuthenticated}/>
+                <ProtectedRoute exact path="/profile" component={Profile} isAuthenticated={isAuthenticated}/>
 
                 <Route exact path="/login"
                        component={(props) => <Login isAuthenticated={isAuthenticated} onLogin={onLogin} {...props}/>}/>
