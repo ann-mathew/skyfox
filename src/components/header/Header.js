@@ -26,7 +26,7 @@ const Header = ({onLogout, isAuthenticated}) => {
     const profileSection = () => {
         if(isAuthenticated) {
             return (
-                <div onClick={onProfile} className={classes.profileLink}>
+                <div onClick={redirectToProfile} className={classes.profileLink}>
                      <Typography className ={classes.profileLink} variant="body1">
                          Welcome,Admin!
                      </Typography>
