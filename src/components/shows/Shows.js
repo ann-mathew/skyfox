@@ -54,6 +54,13 @@ export default ({location, history}) => {
                 <Typography variant="h4" className={classes.showsHeader}>
                     Shows ({showsDate.format(HEADER_DATE_FORMAT)})
                 </Typography>
+                <Button 
+                    variant="contained" 
+                    color="primary"
+                    size="large"
+                    className={classes.scheduleMovieButton}>
+                    <b>SCHEDULE MOVIE</b>
+                </Button>
                 <ShowsRevenue showsRevenue={showsRevenue} showsRevenueLoading={showsRevenueLoading}/>
             </div>
             <List className={classes.listRoot}>
