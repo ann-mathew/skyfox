@@ -28,5 +28,4 @@ describe("Basic rendering", () => {
         expect(logoTypographyComponent.length).toBe(1);
         expect(logoTypographyComponent.text()).toBe("SkyFox Cinema");
     });
-
-}
+});
