@@ -1,9 +1,29 @@
 import React from "react";
-import { Button } from "@material-ui/core";
+import styles from "./styles/profileStyles";
+import { Button, Typography } from "@material-ui/core";
 
 const Profile = (isAuthenticated) => {
-  if (isAuthenticated) {
-    return <h1> hello world</h1>;
-  }
+  const classes = styles();
+
+  return (
+    <>
+      <Typography variant="h4" className={classes.profileHeader}>
+        User Profile
+      </Typography>
+      <Typography variant="body1" className={classes.profileItem}>
+        Name: YOUR NAME
+      </Typography>
+      <Typography variant="body1" className={classes.profileItem}>
+        Username: Email ID
+      </Typography>
+      <Button 
+        variant="contained" 
+        color="primary"
+        size="large"
+        className={classes.changePasswordButton}>
+        CHANGE PASSWORD
+      </Button>
+    </>
+  );
 };
 export default Profile;
