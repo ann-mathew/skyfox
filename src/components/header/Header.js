@@ -5,7 +5,6 @@ import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import PersonIcon from '@material-ui/icons/Person';
 import styles from "./styles/headerStyles";
 import PropTypes from "prop-types";
-import {BrowserRouter as Router, Redirect, Route, Switch} from "react-router-dom";
 
 const Header = ({onLogout, isAuthenticated}) => {
     const classes = styles();
@@ -26,27 +25,18 @@ const Header = ({onLogout, isAuthenticated}) => {
     const profileSection = () => {
         if(isAuthenticated) {
             return (
-                <div onClick={redirectToProfile} className={classes.profileLink}>
-                     <Typography className ={classes.profileLink} variant="body1">
-                         Welcome,Admin!
-                     </Typography>
-
-                     <PersonIcon/>
+                <div className={classes.profileLink}>
+                    <Typography className ={classes.profileLink} variant="body1">
+                        Welcome,Admin!
+                    </Typography>
+                    <a href="/profile" className={classes.profileLinkIcon}>
+                        <PersonIcon/>
+                    </a>
                 </div>
             );
         }
     };
 
-    const redirectToProfile = () => {
-        console.log("clicked")
-        return (
-        <Router>
-            <Switch>
-            <Redirect path="/" exact to="/profile"/>
-            </Switch>
-            </Router>
-        )
-    } 
     return (
         <AppBar position={"sticky"}>
             <Toolbar className={classes.toolbar}>

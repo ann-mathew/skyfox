@@ -18,7 +18,13 @@ export default makeStyles((theme) => ({
             display: 'flex',
             justifyContent: "flex-end",
             alignItems: "right",
-            cursor: "pointer",
+            height: "20px"
+        },
+        profileLinkIcon: {
+            margin: "0 5px",
+            textDecoration: "none",
+            color: "white",
+            lineHeight: "30px"
         },
         headerDivision: {
             display: 'flex',
