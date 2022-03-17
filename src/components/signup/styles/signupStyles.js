@@ -16,10 +16,6 @@ export default makeStyles((theme) =>
         },
         loginErrorMessage: {
             marginTop: "8px"
-        },
-        signUpLink: {
-            display: "flex",
-            flexDirection: "column"
         }
     })
 );
