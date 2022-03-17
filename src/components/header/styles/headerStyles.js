@@ -11,14 +11,18 @@ export default makeStyles((theme) => ({
             display: 'flex',
             justifyContent: "flex-start",
             alignItems: "center",
-            cursor: "pointer"
+            cursor: "pointer",
+            marginLeft: '15px'
         },
         profileLink: {
             display: 'flex',
             justifyContent: "flex-end",
             alignItems: "right",
             cursor: "pointer",
-            marginLeft: '65%'
+        },
+        headerDivision: {
+            display: 'flex',
+            justifyContent: "flex-end"
         },
         cinemaLogoIcon: {
             fontSize: '2.25em'
