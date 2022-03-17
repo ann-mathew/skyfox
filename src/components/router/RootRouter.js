@@ -26,7 +26,7 @@ const RootRouter = ({ isAuthenticated, onLogin }) => {
                     component={(props) => <Login isAuthenticated={isAuthenticated} onLogin={onLogin} {...props} />} />
 
                 <Route exact path="/signup"
-                    component={() => <Signup />} />
+                    component={Signup} />
 
                 <Route exact path="/error" component={
                     () => <Error errorIcon={ErrorOutlineIcon} errorMessage={"Oops..Something went wrong"} />

@@ -6,8 +6,6 @@ import styles from "./styles/loginStyles"
 import PropTypes from "prop-types";
 import useLogin from "./hooks/useLogin";
 import { formSchema, initialValues } from "./services/loginFormService";
-import { BrowserRouter as Link } from 'react-router-dom';
-
 
 const Login = ({ location, history, isAuthenticated, onLogin }) => {
     const classes = styles();
@@ -62,9 +60,9 @@ const Login = ({ location, history, isAuthenticated, onLogin }) => {
                     }
                 }
             </Formik>
-            <Link to="/signup" className={classes.loginContainer}>
+            <a href="/signup" className={classes.loginContainer}>
                 New to SkyFox? Signup here
-            </Link>
+            </a>
         </div>
     );
 }
