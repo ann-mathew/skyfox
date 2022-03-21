@@ -2,20 +2,31 @@ import {makeStyles} from "@material-ui/core/styles";
 
 export default makeStyles((theme) =>
     ({
-        loginContainer: {
+        signupContainer: {
             display: "flex",
+            alignItems: "center",
             justifyContent: "center",
-            padding: "20px 40px"
+            flexDirection: "column",
+            height: "450px"
         },
-        loginForm: {
+    
+        signupForm: {
             display: "flex",
-            flexDirection: "column"
+            flexDirection: "column",
+            width: "500px"
         },
-        loginButton: {
+
+        signupButton: {
             marginTop: "15px"
         },
-        loginErrorMessage: {
+
+        signupErrorMessage: {
             marginTop: "8px"
+        },
+        
+        signUpLink: {
+            display: "flex",
+            justifyContent: "center"
         }
     })
 );

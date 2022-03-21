@@ -12,14 +12,14 @@ const FormikSelect = (props) => {
 
     return (
         <FormControl className={className}>
-            <InputLabel id={id}>Status</InputLabel>
+            <InputLabel id={id}></InputLabel>
             <Select
                 native
                 labelId={id}
                 onChange={onChange}
                 {...otherProps}
             >
-                {options.map((option) => <option key={option.value} value={option.value}>{option.display}</option>)}
+                {options.map((option) => <option key={option.value} value={option.value}>{option.value}</option>)}
             </Select>
         </FormControl>
     );

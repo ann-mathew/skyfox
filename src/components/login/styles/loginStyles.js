@@ -8,7 +8,7 @@ export default makeStyles((theme) =>
         alignItems: "center",
         justifyContent: "center",
         flexDirection: "column",
-  height: "250px"
+        height: "250px"
     },
 
     loginForm: {

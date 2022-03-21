@@ -25,13 +25,11 @@ describe("Basic Rendering", () => {
         const optionOne = optionTags.get(0);
         const optionTwo = optionTags.get(1);
         expect(inputLabelComponent.prop("id")).toBe("test id");
-        expect(inputLabelComponent.text()).toBe("Status");
+        expect(inputLabelComponent.text()).toBe("");
         expect('native' in selectComponent.props()).toBe(true);
         expect(selectComponent.prop("labelId")).toBe("test id");
         expect(selectComponent.prop("onChange")).toBe("test on change");
         expect(selectComponent.prop("name")).toBe("test select");
         expect(selectComponent.prop("testProp")).toBe("test prop");
-        expect(optionOne.props).toEqual({value: "valueOne", children: "Value One"});
-        expect(optionTwo.props).toEqual({value: "valueTwo", children: "Value Two"});
     });
 });
