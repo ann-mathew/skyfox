@@ -4,4 +4,6 @@ fileignoreconfig:
   ignore_detectors: [filename]
 - filename: src/components/formik/FormikSelect.js
   checksum: 536667ad29312d59cd2d8d1dfd8e8e65d3a4bb1e1a9146f9faccc63c3da0db95
+- filename: src/components/signup/services/signupFormService.js
+  checksum: a5e9307bfab4e6395feb936f519333c0191bff6c277febee10a82a336703545d
 version: ""
