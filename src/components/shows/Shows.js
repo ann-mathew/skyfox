@@ -20,6 +20,7 @@ import {dateFromSearchString, nextDateLocation, previousDateLocation} from "./se
 import ShowsRevenue from "./ShowsRevenue";
 import useShowsRevenue from "./hooks/useShowsRevenue";
 import SeatSelectionDialog from "./SeatSelectionDialog";
+import MovieScheduleDialog from "./MovieScheduleDialog";
 
 export default ({location, history}) => {
     const classes = styles();
@@ -29,6 +30,8 @@ export default ({location, history}) => {
     const {shows, showsLoading} = useShows(showsDate);
     const {showsRevenue, updateShowsRevenue, showsRevenueLoading} = useShowsRevenue(showsDate);
     const [showSelectSeatDialog, setShowSelectSeatDialog] = useState(false);
+    const [showMovieScheduleDialog, setMovieScheduleDialog] = useState(false);
+   
     const emptyShow = {
         "id": "",
         "date": "",
@@ -48,6 +51,7 @@ export default ({location, history}) => {
     };
     const [selectedShow, setSelectedShow] = useState(emptyShow);
 
+
     return (
         <>
             <div className={classes.cardHeader}>
@@ -57,7 +61,10 @@ export default ({location, history}) => {
                 <Button 
                     variant="contained" 
                     color="primary"
-                    size="large"
+                    size="large" onClick={() => {
+                        setMovieScheduleDialog(true);
+                        
+                    }}
                     className={classes.scheduleMovieButton}>
                     <b>SCHEDULE MOVIE</b>
                 </Button>
@@ -100,6 +107,10 @@ export default ({location, history}) => {
             <SeatSelectionDialog selectedShow={selectedShow} updateShowsRevenue={updateShowsRevenue}
                                  open={showSelectSeatDialog}
                                  onClose={() => setShowSelectSeatDialog(false)}/>
+
+            <MovieScheduleDialog open ={showMovieScheduleDialog} onClose={()=>{
+            setMovieScheduleDialog(false);
+            }}/>
 
             <div className={classes.buttons}>
                 <Button
