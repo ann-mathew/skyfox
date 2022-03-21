@@ -7,7 +7,8 @@ export default makeStyles((theme) =>
             alignItems: "center",
             justifyContent: "center",
             flexDirection: "column",
-            height: "450px"
+            minHeight: "100px",
+            float: "center"
         },
     
         signupForm: {
